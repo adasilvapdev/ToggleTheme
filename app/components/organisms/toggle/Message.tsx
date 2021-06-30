@@ -3,13 +3,13 @@ import { Text, TextStyle, View, ViewStyle } from 'react-native';
 import { useTheme } from '../../../styles/theme/ThemeProvider';
 
 const Message: React.FC<{}> = () => {
-    const { colors, isDark } = useTheme();
+    const { theme, isDark } = useTheme();
 
     const text = isDark ? 'Dark mode 🌙' : 'Light mode 🌞';
 
     const textStyle = {
         fontSize: 18,
-        color: colors.text,
+        color: theme.text,
     } as TextStyle;
 
     const containerStyle = {
@@ -17,7 +17,7 @@ const Message: React.FC<{}> = () => {
         padding: 12,
         borderRadius: 4,
         borderWidth: 2,
-        borderColor: colors.primary,
+        borderColor: theme.primary,
     } as ViewStyle;
 
     return (

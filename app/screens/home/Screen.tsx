@@ -7,7 +7,7 @@ const Screen = (props: any) => {
     const { children } = props;
 
     //* Using the custom hook we made to pull the theme colors
-    const { colors, isDark } = useTheme();
+    const { theme, isDark } = useTheme();
 
     const styles = StyleSheet.create({
         containerStyle: {
@@ -15,14 +15,14 @@ const Screen = (props: any) => {
             justifyContent: 'center',
             alignItems: 'center',
             /* 
-            * the colors.background value will change dynamicly with
+            * the theme.background value will change dynamicly with
             * so if we wanna change its value we can go directly to the pallet
             * this will make super easy to change and maintain mid or end project
             */
-            backgroundColor: colors.background,
+            backgroundColor: theme.background,
         },
         text: {
-            color: colors.textColor
+            color: theme.textColor
         }
     })
 

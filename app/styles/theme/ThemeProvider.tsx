@@ -8,13 +8,13 @@ import {
 
 export interface Theme {
     isDark: boolean;
-    colors: Colors;
+    theme: Colors;
     setScheme: (val: 'dark' | 'light') => void;
 }
 
 export const ThemeContext = React.createContext<Theme>({
     isDark: false,
-    colors: lightColors,
+    theme: lightColors,
     setScheme: () => { },
 });
 
@@ -31,7 +31,7 @@ export const ThemeProvider: React.FC<{}> = (props) => {
 
     const defaultTheme: Theme = {
         isDark,
-        colors: isDark ? darkColors : lightColors,
+        theme: isDark ? darkColors : lightColors,
         setScheme: (scheme) => setIsDark(scheme === "dark"),
     };
 
