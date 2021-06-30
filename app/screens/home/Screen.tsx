@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StatusBar, StyleSheet, Text } from 'react-native';
 import { useTheme } from '../../styles/theme/ThemeProvider';
+import { Toggle, Message } from '../../components/organisms/toggle';
 
 const Screen = (props: any) => {
     const { children } = props;
@@ -19,6 +20,9 @@ const Screen = (props: any) => {
             * this will make super easy to change and maintain mid or end project
             */
             backgroundColor: colors.background,
+        },
+        text: {
+            color: colors.textColor
         }
     })
 
@@ -27,8 +31,10 @@ const Screen = (props: any) => {
             {/* We can also use the isDark prop to set the statusbar style accordingly */}
             <StatusBar animated barStyle={isDark ? "light-content" : "dark-content"} />
             <View style={styles.containerStyle}>
-                <Text>hola</Text>
-                {children}
+                <Text style={styles.text}>hola</Text>
+                {/* {children} */}
+                <Toggle />
+                <Message />
             </View>
         </>
     );
