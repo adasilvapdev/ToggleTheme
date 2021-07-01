@@ -1,7 +1,10 @@
 import React from 'react';
 import { View, StatusBar, StyleSheet, Text } from 'react-native';
 import { useTheme } from '../../styles/theme/ThemeProvider';
-import { Toggle, Message } from '../../components/organisms/toggle';
+import { Toggle, Toggle2 } from '../../components/organisms/toggles'
+import { Message } from '../../components/organisms/messages'
+// @ts-ignore
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const Screen = (props: any) => {
     const { children } = props;
@@ -22,7 +25,9 @@ const Screen = (props: any) => {
             backgroundColor: theme.background,
         },
         text: {
-            color: theme.textColor
+            color: theme.textColor,
+            marginTop: '10%',
+            marginBottom: '2%',
         }
     })
 
@@ -31,10 +36,30 @@ const Screen = (props: any) => {
             {/* We can also use the isDark prop to set the statusbar style accordingly */}
             <StatusBar animated barStyle={isDark ? "light-content" : "dark-content"} />
             <View style={styles.containerStyle}>
-                <Text style={styles.text}>Hi!</Text>
-                {/* {children} */}
-                <Toggle />
                 <Message />
+                <Text style={styles.text}>Toggle</Text>
+                <Toggle />
+                <Text style={styles.text}>Toggle2</Text>
+                <Toggle2 />
+
+                <View style={{
+                    flexDirection: 'row',
+                    marginTop: '10%',
+                }}>
+                    <Icon
+                        name="sun"
+                        size={25}
+                        color="#ea9f17"
+                        style={{ margin: '5%' }}
+                    />
+
+                    <Icon
+                        name="moon"
+                        size={25}
+                        color="#f0c613"
+                        style={{ margin: '5%' }}
+                    />
+                </View>
             </View>
         </>
     );
