@@ -31,7 +31,7 @@ const Screen = (props: any) => {
             {/* We can also use the isDark prop to set the statusbar style accordingly */}
             <StatusBar animated barStyle={isDark ? "light-content" : "dark-content"} />
             <View style={styles.containerStyle}>
-                <Text style={styles.text}>hola</Text>
+                <Text style={styles.text}>Hi!</Text>
                 {/* {children} */}
                 <Toggle />
                 <Message />

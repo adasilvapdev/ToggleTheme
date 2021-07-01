@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import { Text, TextStyle, View, ViewStyle } from 'react-native';
 import { useTheme } from '../../../styles/theme/ThemeProvider';
 
 const Message: React.FC<{}> = () => {
     const { theme, isDark } = useTheme();
 
-    const text = isDark ? 'Dark mode 🌙' : 'Light mode 🌞';
+    const text = isDark ? 'Dark mode 🌛🌙' : 'Light mode ☀️🌞';
 
     const textStyle = {
         fontSize: 18,

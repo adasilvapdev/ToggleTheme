@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useColorScheme } from 'react-native-appearance';
 import { lightColors, darkColors } from './ColorThemes';
 
